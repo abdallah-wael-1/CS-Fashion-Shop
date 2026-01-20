@@ -6,57 +6,134 @@
 }
 
 .footer {
-  backdrop-filter: blur(7px);
-  padding: 15px 0;
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(20, 20, 20, 0.8) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-top: 2px solid rgba(216, 125, 49, 0.3);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  padding: 20px 0;
   margin-top: auto;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #d87d31 20%,
+    #f28c38 50%,
+    #d87d31 80%,
+    transparent 100%
+  );
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .footer .copyright {
   position: relative;
   z-index: 1;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 15px 20px;
   text-align: center;
-  font-size: 20px;
-  color: #fff;
+  font-size: 18px;
+  color: #ffffff;
   font-weight: 400;
-  font-size: 22px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .footer .copyright a {
   text-decoration: none;
-  color: #fff;
+  color: #d87d31;
   font-style: oblique;
   font-weight: bold;
   transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.footer .copyright a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #d87d31, #f28c38);
+  transition: width 0.3s ease;
+}
+
+.footer .copyright a:hover {
+  color: #f28c38;
+  text-shadow: 0 0 15px rgba(216, 125, 49, 0.6);
+  transform: translateY(-1px);
+}
+
+.footer .copyright a:hover::after {
+  width: 100%;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .footer {
+    padding: 18px 0;
+  }
+
   .footer .copyright {
-    font-size: 18px;
-    padding: 15px 0;
+    font-size: 17px;
+    padding: 14px 18px;
   }
 }
 
 @media (max-width: 768px) {
   .footer {
-    padding: 10px 0;
+    padding: 15px 0;
   }
 
   .footer .copyright {
-    font-size: 16px;
-    padding: 12px 10px;
+    font-size: 15px;
+    padding: 12px 15px;
   }
 }
 
 @media (max-width: 480px) {
   .footer {
-    padding: 8px 0;
+    padding: 12px 0;
   }
 
   .footer .copyright {
     font-size: 13px;
-    padding: 10px 5px;
+    padding: 10px 12px;
+    letter-spacing: 0.3px;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    padding: 10px 0;
+  }
+
+  .footer .copyright {
+    font-size: 12px;
+    padding: 8px 10px;
   }
 }

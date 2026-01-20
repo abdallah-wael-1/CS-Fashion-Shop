@@ -26,6 +26,7 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+  min-height: 100vh;
 }
 
 /* Cart section styles */
@@ -43,11 +44,12 @@ body {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin-top: 40px;
+  overflow: hidden;
 }
 
 .cart-table th,
 .cart-table td {
-  padding: 30px 50px;
+  padding: 20px 30px;
   text-align: center;
   border-bottom: 1px solid #ddd;
   color: #333;
@@ -56,6 +58,11 @@ body {
 .cart-table th {
   background-color: rgba(255, 255, 255, 0.1);
   font-weight: bold;
+  font-size: 16px;
+}
+
+.cart-table td {
+  font-size: 15px;
 }
 
 .cart-table td img {
@@ -70,6 +77,7 @@ body {
   margin: 0 10px;
   font-weight: bold;
   color: #333;
+  font-size: 16px;
 }
 
 .cart-table .decrease,
@@ -83,9 +91,7 @@ body {
   padding: 5px 10px;
   margin: 0 5px;
   border-radius: 50%;
-  transition:
-    0.3s ease,
-    0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .cart-table .decrease:hover,
@@ -101,9 +107,12 @@ body {
 
 /* Clear cart button */
 .clear {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   margin: 20px auto;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background-color: #000;
   color: #fff;
   border: none;
@@ -111,10 +120,8 @@ body {
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
   transition: background-color 0.3s ease;
+  width: fit-content;
 }
 
 .clear:hover {
@@ -124,7 +131,7 @@ body {
 /* Summary section */
 .summary {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
   background: #fff;
   border-radius: 10px;
@@ -152,7 +159,7 @@ body {
 
 .chekout {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -173,50 +180,159 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  body {
+    background-attachment: scroll;
+  }
+
   .cart {
     margin: 30px auto;
-    padding: 15px;
+    padding: 20px;
+  }
+
+  .cart-table {
+    margin-top: 35px;
   }
 
   .cart-table th,
   .cart-table td {
-    padding: 20px 30px;
+    padding: 18px 25px;
+  }
+
+  .cart-table th {
+    font-size: 15px;
+  }
+
+  .cart-table td {
     font-size: 14px;
   }
 
+  .cart-table td img {
+    width: 55px;
+    height: 55px;
+  }
+
   .summary {
-    max-width: 350px;
-    padding: 15px;
+    max-width: 380px;
+    padding: 18px;
   }
 
   .summary h1 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .sub {
-    font-size: 16px;
+    font-size: 17px;
+  }
+
+  .clear {
+    font-size: 15px;
+    padding: 11px 22px;
   }
 }
 
 @media (max-width: 768px) {
   .cart {
     margin: 20px auto;
-    padding: 10px;
+    padding: 15px;
   }
 
   .cart-table {
-    margin-top: 30px;
+    margin-top: 180px;
+    font-size: 12px;
   }
 
   .cart-table th,
   .cart-table td {
-    padding: 15px 20px;
+    padding: 12px 15px;
+  }
+
+  .cart-table th {
+    font-size: 13px;
+  }
+
+  .cart-table td {
     font-size: 12px;
   }
 
   .cart-table td img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .cart-table .quantity {
+    margin: 0 6px;
+    font-size: 13px;
+  }
+
+  .cart-table .decrease,
+  .cart-table .increase,
+  .cart-table .delete-btn {
+    font-size: 15px;
+    padding: 4px 8px;
+    margin: 0 3px;
+  }
+
+  .clear {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 18px auto;
+  }
+
+  .summary {
+    max-width: 95%;
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .summary h1 {
+    font-size: 19px;
+    margin-bottom: 15px;
+  }
+
+  .sub {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .chekout {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart {
+    margin: 15px 10px;
+    padding: 10px;
+  }
+
+  .cart-table {
+    margin-top: 170px;
+    border-radius: 8px;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    padding: 10px 8px;
+  }
+
+  .cart-table th {
+    font-size: 11px;
+    padding: 12px 8px;
+  }
+
+  .cart-table td {
+    font-size: 11px;
+  }
+
+  .cart-table td img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .cart-table .quantity {
+    margin: 0 4px;
+    font-size: 12px;
   }
 
   .cart-table .decrease,
@@ -229,96 +345,94 @@ body {
 
   .clear {
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 13px;
+    margin: 15px auto;
   }
 
   .summary {
-    max-width: 300px;
+    max-width: 100%;
     padding: 12px;
+    margin: 12px 10px;
   }
 
   .summary h1 {
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 17px;
+    margin-bottom: 12px;
   }
 
   .sub {
     font-size: 14px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
   }
 
   .chekout {
-    padding: 8px;
-    font-size: 14px;
+    padding: 9px;
+    font-size: 13px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
   .cart {
-    margin: 15px auto;
+    margin: 12px 8px;
     padding: 8px;
   }
 
   .cart-table {
-    margin-top: 20px;
+    margin-top: 160px;
   }
 
   .cart-table th,
   .cart-table td {
-    padding: 10px;
-    font-size: 10px;
+    padding: 8px 6px;
   }
 
   .cart-table th {
-    font-size: 9px;
+    font-size: 10px;
+    padding: 10px 6px;
+  }
+
+  .cart-table td {
+    font-size: 10px;
   }
 
   .cart-table td img {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
   }
 
   .cart-table .quantity {
-    margin: 0 5px;
-    font-size: 10px;
+    margin: 0 3px;
+    font-size: 11px;
   }
 
   .cart-table .decrease,
   .cart-table .increase,
   .cart-table .delete-btn {
     font-size: 12px;
-    padding: 2px 4px;
-    margin: 0 1px;
+    padding: 2px 5px;
   }
 
   .clear {
-    padding: 6px 12px;
+    padding: 7px 14px;
     font-size: 12px;
-    margin: 10px auto;
   }
 
   .summary {
-    max-width: 100%;
     padding: 10px;
-    margin: 10px;
+    margin: 10px 8px;
   }
 
   .summary h1 {
-    font-size: 16px;
+    font-size: 15px;
     margin-bottom: 10px;
   }
 
   .sub {
-    font-size: 12px;
-    margin-bottom: 10px;
-  }
-
-  .sub .subtotal {
-    font-weight: bold;
+    font-size: 13px;
   }
 
   .chekout {
-    padding: 6px;
+    padding: 8px;
     font-size: 12px;
   }
 }

@@ -7,10 +7,12 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   font-family: "Arial", sans-serif;
+  padding: 20px;
 }
 
 .form-container {
@@ -20,8 +22,8 @@ body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   text-align: center;
-  width: 350px;
-  margin-left: 120px;
+  width: 100%;
+  max-width: 380px;
   backdrop-filter: blur(10px);
 }
 
@@ -29,20 +31,22 @@ body {
   margin-bottom: 1.5rem;
   font-size: 2.5rem;
   color: #ffffff;
+  line-height: 1.2;
 }
 
 /* Input Styles */
 .input-group {
   position: relative;
   margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .input-group label {
   display: block;
-  text-align: left;
   color: #ffffff;
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .input-group input {
@@ -53,7 +57,7 @@ body {
   border-radius: 5px;
   font-size: 1rem;
   color: #ffffff;
-  transition: 0.3s;
+  transition: all 0.3s ease;
   box-sizing: border-box;
 }
 
@@ -65,7 +69,7 @@ body {
   border-color: #ffffff;
   outline: none;
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 /* Hide the default reveal icon for password fields in browsers */
@@ -77,25 +81,32 @@ body {
 
 .options input[type="checkbox"] {
   accent-color: #f28c38;
+  cursor: pointer;
 }
 
 .input-group .icon {
   position: absolute;
-  right: 18px;
-  top: 70%;
+  right: 15px;
+  top: 68%;
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
+  pointer-events: none;
 }
 
 .input-group .eye-icon {
   position: absolute;
-  right: 18px;
-  top: 70%;
+  right: 15px;
+  top: 68%;
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.input-group .eye-icon:hover {
+  color: #ffffff;
 }
 
 /* Options Styles */
@@ -104,11 +115,16 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
+  gap: 10px;
 }
 
 .options label {
   color: #ffffff;
   font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .options .forgot-password,
@@ -116,11 +132,13 @@ body {
   color: #f28c38;
   text-decoration: none;
   font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .options .forgot-password:hover,
 .signup-link a:hover {
   text-decoration: underline;
+  color: #ff9a50;
 }
 
 /* Button Styles */
@@ -132,13 +150,14 @@ body {
   border-radius: 5px;
   color: white;
   font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .form-container button:hover {
-  background-color: rgba(92, 64, 51, 0.8);
-  transform: scale(1.05); /* تكبير الزر عند المرور عليه */
+  background-color: rgba(92, 64, 51, 0.9);
+  transform: scale(1.03);
 }
 
 /* Sign Up Link */
@@ -148,53 +167,80 @@ body {
   font-size: 0.9rem;
 }
 
+/* Field Error */
+.field-error {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  display: block;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
+  body {
+    background-attachment: scroll;
+  }
+
   .form-container {
-    width: 350px;
-    margin-left: 80px;
+    max-width: 360px;
+    padding: 2.3rem;
   }
 
   .form-container h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .input-group input {
     font-size: 0.95rem;
-    padding: 10px 35px 10px 10px;
+    padding: 11px 38px 11px 11px;
+  }
+
+  .input-group .icon,
+  .input-group .eye-icon {
+    font-size: 0.95rem;
+  }
+
+  .options label,
+  .options .forgot-password {
+    font-size: 0.85rem;
+  }
+
+  .form-container button {
+    font-size: 0.95rem;
+  }
+
+  .signup-link {
+    font-size: 0.85rem;
   }
 }
 
 @media (max-width: 768px) {
   body {
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+    padding: 15px;
   }
 
   .form-container {
-    width: 100%;
-    max-width: 320px;
-    margin-left: 0;
+    max-width: 340px;
     padding: 2rem;
   }
 
   .form-container h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1.3rem;
   }
 
   .input-group {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
   }
 
   .input-group label {
     font-size: 0.85rem;
+    margin-bottom: 0.4rem;
   }
 
   .input-group input {
     font-size: 0.9rem;
-    padding: 10px 35px 10px 10px;
+    padding: 10px 36px 10px 10px;
   }
 
   .input-group .icon,
@@ -205,7 +251,9 @@ body {
 
   .options {
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 1.2rem;
   }
 
   .options label {
@@ -217,13 +265,13 @@ body {
   }
 
   .form-container button {
-    padding: 10px;
+    padding: 11px;
     font-size: 0.9rem;
   }
 
   .signup-link {
     font-size: 0.85rem;
-    margin-top: 0.8rem;
+    margin-top: 0.9rem;
   }
 
   .field-error {
@@ -233,43 +281,41 @@ body {
 
 @media (max-width: 480px) {
   body {
-    justify-content: center;
-    align-items: center;
+    padding: 12px;
   }
 
   .form-container {
-    width: 95%;
-    max-width: none;
-    padding: 1.5rem;
-    margin-left: 0;
+    max-width: 100%;
+    padding: 1.8rem 1.5rem;
   }
 
   .form-container h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
   }
 
   .input-group {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
   }
 
   .input-group label {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
   }
 
   .input-group input {
     font-size: 0.85rem;
-    padding: 8px 32px 8px 8px;
+    padding: 9px 34px 9px 9px;
   }
 
   .input-group .icon,
   .input-group .eye-icon {
-    right: 8px;
-    font-size: 0.8rem;
+    right: 10px;
+    font-size: 0.85rem;
+    top: 70%;
   }
 
   .options {
-    flex-direction: column;
     gap: 8px;
     margin-bottom: 1rem;
   }
@@ -283,24 +329,101 @@ body {
   }
 
   .form-container button {
-    padding: 8px;
+    padding: 10px;
     font-size: 0.85rem;
   }
 
   .form-container button:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
   }
 
   .signup-link {
     font-size: 0.8rem;
-    margin-top: 0.6rem;
-  }
-
-  .signup-link a {
-    font-size: 0.8rem;
+    margin-top: 0.8rem;
   }
 
   .field-error {
     font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    padding: 10px;
+  }
+
+  .form-container {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .form-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .input-group {
+    margin-bottom: 0.9rem;
+  }
+
+  .input-group label {
+    font-size: 0.75rem;
+  }
+
+  .input-group input {
+    font-size: 0.8rem;
+    padding: 8px 32px 8px 8px;
+  }
+
+  .input-group .icon,
+  .input-group .eye-icon {
+    right: 8px;
+    font-size: 0.8rem;
+  }
+
+  .options label,
+  .options .forgot-password {
+    font-size: 0.7rem;
+  }
+
+  .form-container button {
+    padding: 9px;
+    font-size: 0.8rem;
+  }
+
+  .signup-link {
+    font-size: 0.75rem;
+  }
+
+  .field-error {
+    font-size: 0.65rem;
+  }
+}
+
+/* Landscape orientation fix */
+@media (max-height: 500px) and (orientation: landscape) {
+  body {
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .form-container {
+    margin: 10px auto;
+  }
+
+  .form-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .input-group {
+    margin-bottom: 0.8rem;
+  }
+
+  .options {
+    margin-bottom: 0.8rem;
+  }
+
+  .signup-link {
+    margin-top: 0.6rem;
   }
 }
