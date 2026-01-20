@@ -14,8 +14,18 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   color: #333;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 /* Cart section styles */
@@ -73,7 +83,9 @@ body {
   padding: 5px 10px;
   margin: 0 5px;
   border-radius: 50%;
-  transition: 0.3s ease, 0.3s ease;
+  transition:
+    0.3s ease,
+    0.3s ease;
 }
 
 .cart-table .decrease:hover,
@@ -157,4 +169,156 @@ body {
 
 .chekout:hover {
   background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cart {
+    margin: 30px auto;
+    padding: 15px;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    padding: 20px 30px;
+    font-size: 14px;
+  }
+
+  .summary {
+    max-width: 350px;
+    padding: 15px;
+  }
+
+  .summary h1 {
+    font-size: 20px;
+  }
+
+  .sub {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart {
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .cart-table {
+    margin-top: 30px;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    padding: 15px 20px;
+    font-size: 12px;
+  }
+
+  .cart-table td img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cart-table .decrease,
+  .cart-table .increase,
+  .cart-table .delete-btn {
+    font-size: 14px;
+    padding: 3px 6px;
+    margin: 0 2px;
+  }
+
+  .clear {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .summary {
+    max-width: 300px;
+    padding: 12px;
+  }
+
+  .summary h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .sub {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .chekout {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart {
+    margin: 15px auto;
+    padding: 8px;
+  }
+
+  .cart-table {
+    margin-top: 20px;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .cart-table th {
+    font-size: 9px;
+  }
+
+  .cart-table td img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cart-table .quantity {
+    margin: 0 5px;
+    font-size: 10px;
+  }
+
+  .cart-table .decrease,
+  .cart-table .increase,
+  .cart-table .delete-btn {
+    font-size: 12px;
+    padding: 2px 4px;
+    margin: 0 1px;
+  }
+
+  .clear {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin: 10px auto;
+  }
+
+  .summary {
+    max-width: 100%;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .summary h1 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .sub {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .sub .subtotal {
+    font-weight: bold;
+  }
+
+  .chekout {
+    padding: 6px;
+    font-size: 12px;
+  }
 }

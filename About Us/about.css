@@ -1,85 +1,184 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    color: #ffffff;
+  height: 100%;
+  font-family: "Arial", sans-serif;
+  color: #ffffff;
 }
 
 .video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .overlay {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
 
 .heading {
-    font-size: 50px;
-    font-weight: bold;
-    color: #0d98d4;
-    margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #0d98d4;
+  margin-bottom: 30px;
 }
 
 .description {
-    font-size: 24px;
-    margin: 10px 0;
-    max-width: 800px;
+  font-size: 24px;
+  margin: 10px 0;
+  max-width: 800px;
 }
 
 .overlay h4 {
-    font-size: 20px;
-    max-width: 800px;
-    margin: 20px 0;
-    line-height: 1.6;
+  font-size: 20px;
+  max-width: 800px;
+  margin: 20px 0;
+  line-height: 1.6;
 }
 
 .our {
-    display: flex;
-    gap: 35px;
-    justify-content: center;
-    margin-top: 20px;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .link {
-    color: #0d98d4;
-    font-size: 20px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 10px 18px;
-    gap: 10px;
-    border-radius: 25px;
-    transition:  0.3s  all ease;
+  color: #0d98d4;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  gap: 10px;
+  border-radius: 25px;
+  transition: 0.3s all ease;
 }
 
 .link:hover {
-    background-color:black; 
-    color: #ffffff;
-    box-shadow: 0 6px 12px rgba(93, 173, 226, 0.3); 
+  background-color: black;
+  color: #ffffff;
+  box-shadow: 0 6px 12px rgba(93, 173, 226, 0.3);
 }
 
 .our .social {
-    font-size: 21px;
-    font-weight: 700;
+  font-size: 21px;
+  font-weight: 700;
+}
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 20px;
+  }
+
+  .overlay h4 {
+    font-size: 18px;
+    max-width: 700px;
+  }
+
+  .link {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .overlay {
+    padding: 15px;
+  }
+
+  .heading {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .overlay h4 {
+    font-size: 15px;
+    max-width: 95%;
+    margin: 15px 0;
+    line-height: 1.5;
+  }
+
+  .our {
+    gap: 25px;
+    margin-top: 15px;
+  }
+
+  .link {
+    font-size: 15px;
+    padding: 8px 14px;
+    gap: 8px;
+  }
+
+  .our .social {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 10px;
+    min-height: 100vh;
+  }
+
+  .heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 13px;
+    max-width: 100%;
+    margin: 5px 0;
+  }
+
+  .overlay h4 {
+    font-size: 12px;
+    max-width: 100%;
+    margin: 10px 0;
+    line-height: 1.4;
+  }
+
+  .our {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .link {
+    font-size: 12px;
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .our .social {
+    font-size: 16px;
+  }
 }
